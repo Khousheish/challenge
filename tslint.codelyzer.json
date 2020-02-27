@@ -54,14 +54,14 @@
     "component-selector": [
       true,
       "element",
-      "iv",
+      "ch",
       "kebab-case"
     ],
     "directive-class-suffix": true,
     "directive-selector": [
       true,
       "attribute",
-      "iv",
+      "ch",
       "camelCase"
     ],
     "import-destructuring-spacing": true,
@@ -71,7 +71,7 @@
     "no-queries-metadata-property": true,
     "pipe-prefix": [
       true,
-      "iv"
+      "ch"
     ],
     "prefer-inline-decorator": false
   }
