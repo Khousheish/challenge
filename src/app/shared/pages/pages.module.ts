@@ -1,9 +1,10 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { NgModule } from '@angular/core';
+
 import { SharedModule } from '../shared.module';
 import { Page404Component } from './page404/page404.component';
 
-const components: any = [
+const components = [
   Page404Component,
 ];
 

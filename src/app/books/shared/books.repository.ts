@@ -1,5 +1,8 @@
-import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
+import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+
+import { BookList } from '@Shared/interfaces/books.interface';
 
 @Injectable()
 export class BooksRepository {
@@ -9,10 +12,11 @@ export class BooksRepository {
   ) {
   }
 
-  getBooks() {
+  public getBooks(page: number = 1): Observable<BookList> {
     let params: HttpParams = new HttpParams();
-    params = params.set('q', '123s')
+    params = params.set('startIndex', (30 * page).toString());
+    params = params.set('maxResults', '30');
 
-    return this.httpClient.get<any>(`https://www.googleapis.com/books/v1/volumes`, {params})
+    return this.httpClient.get<BookList>(`https://www.googleapis.com/books/v1/volumes`, {params})
   }
 }

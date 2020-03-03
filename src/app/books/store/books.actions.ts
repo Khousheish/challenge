@@ -1,6 +1,13 @@
 import { createAction, props } from '@ngrx/store';
-import { Book } from 'src/app/shared/interfaces/books.interface';
 
-export const getBooks = createAction('[Books] GetBooks');
-export const getBooksSuccess = createAction('[Books] GetBooksSuccess', props<{ payload: Book[]}>());
-export const getBooksError = createAction('[Books] GetBooksError', props<Error>());
+import { BookList } from '@Shared/interfaces/books.interface';
+
+export enum ActionTypes {
+  GET_BOOKS = '[Books] GetBooks',
+  GET_BOOKS_SUCCESS = '[Books] GetBooksSuccess',
+  GET_BOOKS_ERROR = '[Books] GetBooksError',
+};
+
+export const getBooks = createAction(ActionTypes.GET_BOOKS, props<{ pageIndex: number; }>());
+export const getBooksSuccess = createAction(ActionTypes.GET_BOOKS_SUCCESS, props<{ payload: BookList; }>());
+export const getBooksError = createAction(ActionTypes.GET_BOOKS_ERROR, props<Error>());
