@@ -20,10 +20,10 @@ To install `angular/cli` run
 npm install -g @angular/cli@{{version}}
 ```
 
-For iv-orchestration-spa we are using version `~7.3.4`, run
+For this repository we are using version `~9.0.1`, run
 
 ```shell
-npm install -g @angular/cli@~7.3.4
+npm install -g @angular/cli@~9.0.1
 ```
 
 # Installation
