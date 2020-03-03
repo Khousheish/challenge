@@ -1,27 +1,86 @@
-# Challenge
+<!-- TITLE: Ionoview Orchestration Spa (iv-orchestration-spa) -->
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.0.3.
+# Preinstallation
 
-## Development server
+Use Node.js LTS @ 12.16.0, you can use NVM to manage Node versions on your local
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Dependencies
 
-## Code scaffolding
+Make sure you have `node`, `npm` and `angular/cli` installed in your machine.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### Install node and npm
 
-## Build
+Must have `node` and `npm` installed, other wise its better to install them using [nvm](#Install-NPM-via-NVM).
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+### Install Angular/cli
 
-## Running unit tests
+To install `angular/cli` run
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+```shell
+npm install -g @angular/cli@{{version}}
+```
 
-## Running end-to-end tests
+For iv-orchestration-spa we are using version `~7.3.4`, run
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+```shell
+npm install -g @angular/cli@~7.3.4
+```
 
-## Further help
+# Installation
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+## Copy environment files
+
+```shell
+cp src/environments/environment.ts.dist src/environments/environment.ts
+```
+
+## Build the environment
+
+```shell
+npm install
+ng build
+```
+
+# Install NPM via NVM
+
+## Installing nvm
+
+1- Clone repository
+
+```shell
+wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | bash
+```
+
+2- Add this to your profile (`~/.bash_profile`, `~/.zshrc`, `~/.profile`, or `~/.bashrc`)
+
+```text
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+```
+
+3- Restart your machine or run
+
+```shell
+source {{profile}}
+```
+
+profile: (`~/.bash_profile`, `~/.zshrc`, `~/.profile`, or `~/.bashrc`)
+
+Source [Node Version Manager Installation](https://github.com/nvm-sh/nvm)
+
+## Installing npm
+
+1- To get list of available versions run
+
+```shell
+nvm ls-remote
+```
+
+2- Select version from the list and install it run, (Better to install latest LTS version)
+
+```shell
+nvm install {{selected-version}}
+```
+
+Source [Installing Angular CLI](https://angular.io/cli#installing-angular-cli)
