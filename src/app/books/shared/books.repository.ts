@@ -14,6 +14,7 @@ export class BooksRepository {
 
   public getBooks(page: number = 1): Observable<BookList> {
     let params: HttpParams = new HttpParams();
+    params = params.set('q', 'test')
     params = params.set('startIndex', (30 * page).toString());
     params = params.set('maxResults', '30');
 
