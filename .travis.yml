@@ -5,6 +5,10 @@ language: node_js
 node_js:
   - "v12.13.0"
 
+env:
+  global:
+    CODECOV_TOKEN=$CODECOV_TOKEN
+
 cache:
   directories:
     - node_modules
@@ -20,3 +24,7 @@ install:
 
 script:
   - npm run test:travis
+  - codecov -f coverage/*.json
+
+after_script:
+  - if [[ "$TRAVIS_TEST_RESULT" == 0 ]]; then ./node_modules/.bin/codecov; fi

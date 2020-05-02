@@ -8,7 +8,10 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "test:travis": "ng test --watch=false --no-progress --browsers=ChromiumHeadlessNoSandbox --sourceMap=false"
+    "test:travis": "ng test --watch=false --no-progress --browsers=ChromiumHeadlessNoSandbox --sourceMap=false --code-coverage",
+    "posttest": "nyc report --reporter=json",
+    "test": "nyc --reporter=lcov mocha",
+    "coverage": "codecov"
   },
   "private": true,
   "dependencies": {
@@ -25,6 +28,9 @@
     "@ngrx/effects": "^8.6.0",
     "@ngrx/store": "^8.6.0",
     "@ngrx/store-devtools": "^8.6.0",
+    "chai": "^4.2.0",
+    "codecov": "^3.1.0",
+    "nyc": "^13.0.1",
     "rxjs": "~6.5.4",
     "tslib": "^1.10.0",
     "zone.js": "~0.10.2"
