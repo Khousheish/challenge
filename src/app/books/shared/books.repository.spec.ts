@@ -2,7 +2,7 @@ import { inject, TestBed } from '@angular/core/testing';
 
 import { BooksRepository } from './books.repository';
 
-describe('Service: BooksRepository', () => {
+xdescribe('Service: BooksRepository', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       providers: [
