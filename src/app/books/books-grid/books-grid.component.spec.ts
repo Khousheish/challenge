@@ -1,4 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { StoreModule } from '@ngrx/store';
+import { reducers } from 'app/app.store';
+
+import { BooksFacade } from '@Books/store/books.facade';
 
 import { BooksGridComponent } from './books-grid.component';
 
@@ -8,8 +12,14 @@ xdescribe('BooksGridComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
+      imports: [
+        StoreModule.forRoot(reducers),
+      ],
       declarations: [
         BooksGridComponent,
+      ],
+      providers: [
+        BooksFacade,
       ],
     })
     .compileComponents();
