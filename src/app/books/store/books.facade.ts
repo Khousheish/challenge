@@ -37,4 +37,3 @@ export class BooksFacade {
     this.store.dispatch(getBooks({ pageIndex }));
   }
 }
-
