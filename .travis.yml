@@ -26,6 +26,7 @@ script:
   - npm run test:travis
   - codecov -f coverage/*.json
 
-after_script:
+after_success:
   - if [[ "$TRAVIS_TEST_RESULT" == 0 ]]; then ./node_modules/.bin/codecov; fi
   - if [[ "$TRAVIS_TEST_RESULT" == 0 ]]; then cat ./coverage/lcov.info | coveralls; fi
+
