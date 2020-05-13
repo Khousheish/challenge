@@ -23,7 +23,7 @@ describe('BooksFacade', (): void => {
     facade = TestBed.inject(BooksFacade);
   });
 
-  xdescribe('getBooks', (): void => {
+  describe('getBooks', (): void => {
     it('should dispatch getBooks action', (): void => {
       facade.getBooks(1);
 
